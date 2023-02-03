@@ -9,9 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "13.1.6",
+    "@hookform/resolvers": "^2.9.10",
+    "@next/font": "^13.1.6",
+    "@reduxjs/toolkit": "^1.9.2",
+    "bootstrap": "^5.2.3",
+    "gsap": "^3.11.4",
     "next": "13.1.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-bootstrap": "^2.7.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.43.0",
+    "react-icons": "^4.7.1",
+    "react-redux": "^8.0.5",
+    "styled-components": "^5.3.6",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^2.0.7",
+    "sass": "^1.57.1"
   }
 }
