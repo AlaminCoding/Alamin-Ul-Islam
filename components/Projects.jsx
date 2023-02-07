@@ -3,32 +3,41 @@ import ProjectData from "@/data/projects";
 import { Col, Row } from "react-bootstrap";
 import styled from "styled-components";
 import Image from "next/image";
+import PopupScroll from "./Animation/PopupScroll";
+import PopupScrollTimeline from "./Animation/PopupScrollTimeline";
 const Projects = () => {
   return (
     <InnerContainer padding={true} id="projects">
-      <h1 className="title">Projects</h1>
-      <Row>
-        {ProjectData.map((data, index) => (
-          <Col xl={3} lg={4} md={6} key={"project-" + index}>
-            <ProjectBox href={data.url} target="_blank">
-              <Image src={data.image} alt="project image" />
-              <h1>{data.name}</h1>
-              <ul className="tech-list">
-                {data.tech.map((list, idx) => (
-                  <li key={"list-" + idx}>{list}</li>
-                ))}
-              </ul>
-            </ProjectBox>
-          </Col>
-        ))}
-      </Row>
-      <ExLink
-        href="https://github.com/AlaminCoding"
-        className="main-btn"
-        target="_blank"
-      >
-        More in github
-      </ExLink>
+      <PopupScroll>
+        <h1 className="title">Projects</h1>
+      </PopupScroll>
+
+      <PopupScrollTimeline>
+        <Row>
+          {ProjectData.map((data, index) => (
+            <Col xl={3} lg={4} md={6} key={"project-" + index}>
+              <ProjectBox href={data.url} target="_blank">
+                <Image src={data.image} alt="project image" />
+                <h1>{data.name}</h1>
+                <ul className="tech-list">
+                  {data.tech.map((list, idx) => (
+                    <li key={"list-" + idx}>{list}</li>
+                  ))}
+                </ul>
+              </ProjectBox>
+            </Col>
+          ))}
+        </Row>
+      </PopupScrollTimeline>
+      <PopupScroll>
+        <ExLink
+          href="https://github.com/AlaminCoding"
+          className="main-btn"
+          target="_blank"
+        >
+          More in github
+        </ExLink>
+      </PopupScroll>
     </InnerContainer>
   );
 };
@@ -52,13 +61,11 @@ const ProjectBox = styled.a`
     left: 0;
     object-fit: cover;
     object-position: top left;
-    filter: grayscale(1);
     transition: 0.3s;
   }
   &:hover {
     img {
       transform: scale(1.2);
-      filter: grayscale(0);
     }
   }
   &:after {

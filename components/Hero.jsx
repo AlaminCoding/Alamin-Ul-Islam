@@ -4,56 +4,56 @@ import styled from "styled-components";
 import Image from "next/image";
 import port from "@/public/port.jpg";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
-import gsap from "gsap";
-import { useEffect } from "react";
+import Popup from "@/components/Animation/Popup";
+import PopupTimeline from "@/components/Animation/PopupTimeline";
 const Hero = () => {
-  useEffect(() => {
-    gsap.fromTo(".hero-img", { y: 40, opacity: 0 }, { y: 0, opacity: 1 });
-  });
-
   return (
     <InnerContainer padding={false}>
       <Wrapper>
         <div className="hero-box">
           <Row>
             <Col lg={{ span: 4, offset: 1 }} md={6}>
-              <div className="hero-img">
-                <Image src={port} alt="Picture of Alamin" priority />
-              </div>
+              <Popup>
+                <div className="hero-img">
+                  <Image src={port} alt="Picture of Alamin" priority />
+                </div>
+              </Popup>
             </Col>
             <Col lg={{ span: 5, offset: 1 }}>
-              <div className="hero-text">
-                <h1>Hi,</h1>
-                <p>
-                  My name is <strong>Alamin Ul Islam,</strong> and I'm a
-                  front-end developer dedicated to building engaging and
-                  functional websites that meet user needs and business
-                  objectives.
-                </p>
-                <div className="icon-box">
-                  <div className="resume-box">
-                    <a
-                      href="/Alamin_Resume.pdf"
-                      target="_blank"
-                      className="main-btn"
-                      rel="noopener noreferrer"
-                    >
-                      See My Resume
-                    </a>
-                  </div>
-                  <div className="link-box">
-                    <a href="https://github.com/AlaminCoding" target="_blank">
-                      <FaGithubSquare />
-                    </a>
-                    <a
-                      href="https://www.linkedin.com/in/alamin-ul-islam/"
-                      target="_blank"
-                    >
-                      <FaLinkedin />
-                    </a>
+              <PopupTimeline heightAuto={false}>
+                <div className="hero-text">
+                  <h1>Hi,</h1>
+                  <p>
+                    My name is <strong>Alamin Ul Islam,</strong> and I'm a
+                    front-end developer dedicated to building engaging and
+                    functional websites that meet user needs and business
+                    objectives.
+                  </p>
+                  <div className="icon-box">
+                    <div className="resume-box">
+                      <a
+                        href="/Alamin_Resume.pdf"
+                        target="_blank"
+                        className="main-btn"
+                        rel="noopener noreferrer"
+                      >
+                        See My Resume
+                      </a>
+                    </div>
+                    <div className="link-box">
+                      <a href="https://github.com/AlaminCoding" target="_blank">
+                        <FaGithubSquare />
+                      </a>
+                      <a
+                        href="https://www.linkedin.com/in/alamin-ul-islam/"
+                        target="_blank"
+                      >
+                        <FaLinkedin />
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </PopupTimeline>
             </Col>
           </Row>
         </div>
@@ -83,12 +83,10 @@ const Wrapper = styled.div`
         width: 100%;
         height: auto;
         border-radius: 5px;
-        filter: grayscale(1);
         transition: 0.5s;
       }
       &:hover {
         img {
-          filter: grayscale(0.8);
           transform: scale(1.1);
         }
       }
@@ -99,9 +97,11 @@ const Wrapper = styled.div`
       justify-content: center;
       height: 100%;
       h1 {
+        opacity: 0;
         font-size: calc(38px + (48 - 38) * ((100vw - 360px) / (1920 - 360)));
       }
       p {
+        opacity: 0;
         font-size: 24px;
         font-size: calc(20px + (24 - 20) * ((100vw - 360px) / (1920 - 360)));
         line-height: calc(30px + (38 - 30) * ((100vw - 360px) / (1920 - 360)));
@@ -109,6 +109,7 @@ const Wrapper = styled.div`
         margin-bottom: 34px;
       }
       .icon-box {
+        opacity: 0;
         display: flex;
         justify-content: space-between;
         align-items: center;

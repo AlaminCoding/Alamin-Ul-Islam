@@ -5,57 +5,67 @@ import { FaPhoneSquareAlt, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { MdMail } from "react-icons/md";
 import Image from "next/image";
 import connect from "@/public/connect.jpg";
+import PopupScroll from "./Animation/PopupScroll";
+import PopupScrollTimeline from "./Animation/PopupScrollTimeline";
 // import ContactForm from "./ContactForm";
 const Contact = () => {
   return (
     <InnerContainer padding={true} id="contact">
-      <ContactBox>
-        <Row>
-          <Col lg={{ span: 4, offset: 1 }} md={6}>
-            <div className="contact-text">
-              {/* <h1>
+      <PopupScroll>
+        <ContactBox>
+          <Row>
+            <Col lg={{ span: 4, offset: 1 }} md={6}>
+              <div className="contact-text">
+                {/* <h1>
                 Let’s <br /> Work Together
               </h1> */}
-              <p>Send me a message</p>
-              <ul>
-                <li>
-                  <FaPhoneSquareAlt />
-                  <span>+8801959557707</span>
-                </li>
-                <li>
-                  {/* <FaEnvelope /> */}
-                  <MdMail />
-                  <span>alamin.coding@gmail.com</span>
-                </li>
-                <li>
-                  <FaGithubSquare />
-                  <a href="https://github.com/AlaminCoding" target="_blank">
-                    <span>github.com/AlaminCoding</span>
-                  </a>
-                </li>
-                <li>
-                  <FaLinkedin />
-                  <a
-                    href="https://www.linkedin.com/in/alamin-ul-islam/"
-                    target="_blank"
-                  >
-                    <span>linkedin.com/in/alamin-ul-islam</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </Col>
-          <Col lg={{ span: 5, offset: 1 }} md={6}>
-            {/* <ContactForm /> */}
-            <div className="contact-img">
-              <h1>
-                Let’s <br /> Work Together
-              </h1>
-              <Image src={connect} alt="Connect Pic" />
-            </div>
-          </Col>
-        </Row>
-      </ContactBox>
+                <PopupScroll>
+                  <p>Send me a message</p>
+                </PopupScroll>
+                <PopupScrollTimeline>
+                  <ul>
+                    <li>
+                      <FaPhoneSquareAlt />
+                      <span>+8801959557707</span>
+                    </li>
+                    <li>
+                      {/* <FaEnvelope /> */}
+                      <MdMail />
+                      <span>alamin.coding@gmail.com</span>
+                    </li>
+                    <li>
+                      <FaGithubSquare />
+                      <a href="https://github.com/AlaminCoding" target="_blank">
+                        <span>github.com/AlaminCoding</span>
+                      </a>
+                    </li>
+                    <li>
+                      <FaLinkedin />
+                      <a
+                        href="https://www.linkedin.com/in/alamin-ul-islam/"
+                        target="_blank"
+                      >
+                        <span>linkedin.com/in/alamin-ul-islam</span>
+                      </a>
+                    </li>
+                  </ul>
+                </PopupScrollTimeline>
+              </div>
+            </Col>
+            <Col lg={{ span: 5, offset: 1 }} md={6}>
+              {/* <ContactForm /> */}
+              <PopupScroll>
+                <div className="contact-img">
+                  <h1>
+                    Let’s <br /> Work Together
+                  </h1>
+                  <Image src={connect} alt="Connect Pic" />
+                </div>
+              </PopupScroll>
+            </Col>
+          </Row>
+        </ContactBox>
+      </PopupScroll>
     </InnerContainer>
   );
 };

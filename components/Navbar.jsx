@@ -7,6 +7,7 @@ import {
 import styled from "styled-components";
 import { InnerContainer } from "@/styles/GlobalStyle";
 import { useEffect, useState } from "react";
+import PopupTimeline from "./Animation/PopupTimeline";
 
 const Navbar = () => {
   const light = useSelector((state) => state.theme.value);
@@ -46,17 +47,19 @@ const Navbar = () => {
     <MainNav navShow={navShow} scrollValue={oldScroll}>
       <InnerContainer>
         <Nav menuOpen={menuOpen}>
-          <ul>
-            <li>
-              <a href="#skills">Skills</a>
-            </li>
-            <li>
-              <a href="#projects">Projects</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
+          <PopupTimeline heightAuto={true}>
+            <ul>
+              <li>
+                <a href="#skills">Skills</a>
+              </li>
+              <li>
+                <a href="#projects">Projects</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </PopupTimeline>
           <div className="toggle" onClick={() => handleMenu()}>
             <div className="bar bar1"></div>
             <div className="bar bar2"></div>
@@ -95,6 +98,7 @@ const Nav = styled.nav`
     align-items: center;
     li {
       margin-right: 40px;
+      opacity: 0;
       a {
         text-transform: uppercase;
         font-size: 20px;

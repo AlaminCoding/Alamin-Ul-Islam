@@ -53,11 +53,11 @@ export const InnerContainer = styled.div`
 `;
 
 export const lightTheme = {
-  bgColor: "#eaffff",
-  txtColor: "#353232",
+  bgColor: "#F0FFFA",
+  txtColor: "#303030",
 };
 
 export const darkTheme = {
-  bgColor: "#353232",
-  txtColor: "#eaffff",
+  bgColor: "#303030",
+  txtColor: "#F0FFFA",
 };
