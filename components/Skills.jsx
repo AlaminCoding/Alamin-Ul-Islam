@@ -7,6 +7,9 @@ import {
   TbBrandVue,
   TbBrandReactNative,
   TbBrandFigma,
+  TbBrandTailwind,
+  TbBrandNextjs,
+  TbBrandNuxt,
 } from "react-icons/tb";
 import styled from "styled-components";
 import Popup from "./Animation/Popup";
@@ -39,6 +42,10 @@ const Skills = () => {
             <p>Bootstrap</p>
           </div>
           <div className="logo-box">
+            <TbBrandTailwind />
+            <p>Tailwind</p>
+          </div>
+          <div className="logo-box">
             <TbBrandVue />
             <p>
               <strong>Vue</strong>
@@ -48,6 +55,18 @@ const Skills = () => {
             <TbBrandReactNative />
             <p>
               <strong>React</strong>
+            </p>
+          </div>
+          <div className="logo-box">
+            <TbBrandNextjs />
+            <p>
+              <strong>Next</strong>
+            </p>
+          </div>
+          <div className="logo-box">
+            <TbBrandNuxt />
+            <p>
+              <strong>Nuxt</strong>
             </p>
           </div>
           <div className="logo-box">
